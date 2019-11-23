@@ -16,3 +16,26 @@
   text-align: center;
   color: #ffe72e;
 }
+.scoreBoard {
+  background: #444;
+  width: 300px;
+  margin: 20px auto;
+  padding: 0px 10px 10px 10px;
+  box-shadow: 0 4px 0px #333;
+  border-radius: 15px;
+}
+.scoreBoard h3 {
+  text-transform: uppercase;
+  padding: 5px;
+  color: #fff;
+}
+.scoreStyles {
+  background: #66bb6a;
+  padding: 6px;
+}
+.playerStyles {
+  color: #fafafa;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  border-bottom: solid 2px #444;
+}
