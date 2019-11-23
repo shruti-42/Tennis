@@ -56,5 +56,35 @@ describe("Game", () => {
     expect(updateScore).toHaveBeenCalledTimes(1);
     score.setProps({ firstPlayer: 11, secondPlayer: player2Points });
   });
+  it("handle the advantage scenario", () => {
+    const updateScore = jest.fn();
+    const points = [0, 15, 30, 40, "won"];
+    var player1Points = 40,
+      player2Points = 40;
 
+    var score = shallow(<ScoreBoard />);
+    const button = shallow(<Player updateScore={updateScore} />);
+    score.setProps({ firstPlayer: player1Points, secondPlayer: player2Points });
+
+    button
+      .find(".player")
+      .props()
+      .onClick();
+    expect(updateScore).toHaveBeenCalledTimes(1);
+    score.setProps({ firstPlayer: 11, secondPlayer: player2Points });
+
+    expect(score.props().children[1].props.children[1].props.children).toEqual(
+      11
+    );
+    button
+      .find(".player")
+      .props()
+      .onClick();
+    expect(updateScore).toHaveBeenCalledTimes(2);
+    score.setProps({ firstPlayer: 1, secondPlayer: player2Points });
+
+    expect(score.props().children[1].props.children[1].props.children).toEqual(
+      1
+    );
+  });
 });
