@@ -13,4 +13,19 @@ describe('ScoreBoard', () => {
         ReactDOM.render(<ScoreBoard />, div);
         ReactDOM.unmountComponentAtNode(div);
     });
+    it('renders first player score correctly', () => {
+        const firstPlayer = 0;
+        const rendered = renderer.create(
+            <ScoreBoard firstPlayer={firstPlayer} />
+        );
+        expect(rendered.toJSON()).toMatchSnapshot();
+    });
+
+    it('renders second player score correctly', () => {
+        const secondPlayer = 0;
+        const rendered = renderer.create(
+            <ScoreBoard secondPlayer={secondPlayer} />
+        );
+        expect(rendered.toJSON()).toMatchSnapshot();
+    });
 });
