@@ -1,9 +1,16 @@
+/* CSS styles for Tennis Game */
+
 .tennisBackground {
   background: #fff;
   background-image: url("../images/tennis.png");
   height: 650px;
   background-size: cover;
   overflow: hidden;
+}
+.playerHeading {
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
 }
 .tennisHeading {
   padding: 0;
@@ -12,9 +19,30 @@
   text-align: center;
   font-size: 34px;
 }
+
+.player {
+  width: 200px;
+  height: 100px;
+  background-image: url("../images/right.png");
+  background-size: cover;
+  cursor: pointer;
+  width: 100px;
+}
 .tennisBackground h1 {
   text-align: center;
   color: #ffe72e;
+}
+.playerStyles {
+  color: #fafafa;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  border-bottom: solid 2px #444;
+}
+.playerBox {
+  display: flex;
+  margin: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .scoreBoard {
   background: #444;
@@ -32,10 +60,4 @@
 .scoreStyles {
   background: #66bb6a;
   padding: 6px;
-}
-.playerStyles {
-  color: #fafafa;
-  text-transform: uppercase;
-  font-size: 1.2em;
-  border-bottom: solid 2px #444;
 }
