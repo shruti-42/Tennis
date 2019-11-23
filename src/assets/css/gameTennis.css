@@ -61,3 +61,18 @@
   background: #66bb6a;
   padding: 6px;
 }
+.resetGame {
+  margin: 0px 50px;
+  width: 100px;
+  height: 50px;
+  background: #cb4e4e;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow: 0 3px #ab3c3c;
+  font-weight: bold;
+}
+.resetGame:focus {
+  outline: none;
+}

@@ -87,4 +87,13 @@ describe("Game", () => {
       1
     );
   });
+  
+  it("resets the game", () => {
+    const firstPlayer = 0;
+    const secondPlayer = 0;
+    const rendered = renderer.create(
+      <ScoreBoard firstPlayer={firstPlayer} secondPlayer={secondPlayer} />
+    );
+    expect(rendered.toJSON()).toMatchSnapshot();
+  });
 });

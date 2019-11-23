@@ -6,7 +6,7 @@ const Tennis = {
   DEUCE: "Deuce!",
   WON: "Won!",
   PLAYER: "Player",
-  
+  RESET_GAME: "Reset Game"
 };
 
 const points = [0, 15, 30, 40, "won"];
@@ -25,7 +25,18 @@ export default class Game extends Component {
   }
 
  
-
+  resetGame = () => {
+    this.setState({
+      firstPlayerPointIndex: 0,
+      secondPlayerPointIndex: 0,
+      gamePoint: false,
+      firstPlayerAdvantage: false,
+      secondPlayerAdvantage: false,
+      won: 0,
+      deuce: false
+    });
+  };
+  
 updateScorePlayer = player => {
     var {
       deuce,
@@ -121,7 +132,9 @@ updateScorePlayer = player => {
       <div className="tennisBackground">
         <h2 className="tennisHeading">Play Tennis</h2>
         <div>
-          
+        <button className="resetGame" onClick={this.resetGame}>
+            {Tennis.RESET_GAME}
+          </button>
           <ScoreBoard
             firstPlayer={points[firstPlayerPointIndex]}
             secondPlayer={points[secondPlayerPointIndex]}
