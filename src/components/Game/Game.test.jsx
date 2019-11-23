@@ -39,4 +39,22 @@ describe("Game", () => {
     );
   });
 
+  it("handle the deuce scenario", () => {
+    const updateScore = jest.fn();
+    const points = [0, 15, 30, 40, "won"];
+    var player1Points = 40,
+      player2Points = 40;
+
+    var score = shallow(<ScoreBoard />);
+    const button = shallow(<Player updateScore={updateScore} />);
+    score.setProps({ firstPlayer: player1Points, secondPlayer: player2Points });
+
+    button
+      .find(".player")
+      .props()
+      .onClick();
+    expect(updateScore).toHaveBeenCalledTimes(1);
+    score.setProps({ firstPlayer: 11, secondPlayer: player2Points });
+  });
+
 });
